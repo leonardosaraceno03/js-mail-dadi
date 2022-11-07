@@ -32,3 +32,33 @@ function sendDatas(){
 
 )
 
+/*-----------------------------------------------------------------------------*/
+
+
+
+
+let vittorieGiocatore = [];
+let vittorieCpu = [];
+
+
+function gioca(){
+    let giocatore =  Math.round( Math.random()* 6 )+ 1;
+    let cpu =  Math.round( Math.random()* 6 )+ 1;
+    
+    document.getElementById('numGiocatore').innerText = `Il numero giocatore è ${giocatore}`
+    document.getElementById('numCpu').innerText = `Il numero giocatore è ${cpu}`
+
+    if(giocatore > cpu){
+        document.getElementById('risultato').innerText = `Ha vinto: Giocatore`
+        vittorieGiocatore.push('vinto')
+    } else if(cpu > giocatore){
+        document.getElementById('risultato').innerText = `Ha vinto: Cpu`
+        vittorieCpu.push('vinto')
+    }
+    else{
+        document.getElementById('risultato').innerText = `Pareggio`
+    }
+    
+    document.getElementById('numeroVittorieGiocatore').innerText= `vittorie player:${vittorieGiocatore.length}`
+    document.getElementById('numeroVittorieCpu').innerText= `vittore giocatore: ${vittorieCpu.length}`
+}
